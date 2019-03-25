@@ -1,0 +1,53 @@
+/*.darkmode .headerbar {
+	background-image: none;
+	background-color: #1F1F1F;
+}
+.site_logo {
+	filter: invert(1) hue-rotate(.5turn);
+}*/
+body.darkmode {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+.darkmode img {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+.darkmode img:not(:hover) {
+  opacity: .7;
+  transition: opacity .25s ease-in-out;
+}
+
+/** Les couleurs sont inversées 
+		http://www.mattlag.com/scripting/hexcolorinverter.php
+*/
+.darkmode .headerbar {
+	background-image: none;
+	background-color: #E0E0E0;
+}
+
+.darkmode .headerbar h1, .darkmode .headerbar p {
+	color: #000000;
+}
+
+/** La suite est un copier coller sans le .darkmode */
+@media (prefers-color-scheme: dark) {
+
+  html {
+    filter: invert(1) hue-rotate(.5turn);
+  }
+
+  img {
+    filter: invert(1) hue-rotate(.5turn);
+  }
+
+  img:not(:hover) {
+    opacity: .7;
+    transition: opacity .25s ease-in-out;
+  }
+  
+  .headerbar {
+		background-image: none;
+		background-color: #1F1F1F;
+}
+}

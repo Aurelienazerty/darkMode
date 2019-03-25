@@ -1,0 +1,8 @@
+services:
+    Aurelienazerty.darkMode.listener:
+        class: Aurelienazerty\darkMode\event\listener
+        arguments:
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }
