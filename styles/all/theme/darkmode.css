@@ -2,7 +2,7 @@ body.darkmode {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-.darkmode img {
+.darkmode img, .darkmode iframe, .darkmode video {
   filter: invert(1) hue-rotate(.5turn);
 }
 
@@ -22,7 +22,7 @@ body.darkmode {
     filter: invert(1) hue-rotate(.5turn);
   }
 
-  img {
+  img, iframe, video {
     filter: invert(1) hue-rotate(.5turn);
   }
 

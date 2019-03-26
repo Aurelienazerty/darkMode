@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Enable switching between Dark and Light mode",
     "homepage": "https://www.team-azerty.com",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "time": "2019-03-24",
 		"keywords": ["phpbb", "extension", "style", "Dark Mode"],
     "license": "GPL-2.0",
@@ -23,6 +23,7 @@
             "phpbb/phpbb": "3.1.*"
         },
         "version-check": {
+        	"ssl": "true",
 					"host": "phpbb.team-azerty.com",
 					"directory": "/",
 		      "filename": "darkmode.json"
