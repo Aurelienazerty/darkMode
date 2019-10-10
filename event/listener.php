@@ -40,7 +40,8 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header'		=> 'do_dark',
+			'core.page_header'			=> 'do_dark',
+			'core.adm_page_header'	=> 'do_dark',
 		);
 	}
 	
@@ -57,7 +58,7 @@ class listener implements EventSubscriberInterface
 		{
 			$styleDoLight = "display: none;";
 			$styleDoDark = "";
-			$class = "";
+			$class = "lightmode";
 		}
 		
 		$this->template->append_var('BODY_CLASS', $class);
