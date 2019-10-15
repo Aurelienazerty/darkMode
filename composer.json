@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Enable switching between Dark and Light mode",
     "homepage": "https://www.team-azerty.com",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "time": "2019-10-10",
 		"keywords": ["phpbb", "extension", "style", "Dark Mode"],
     "license": "GPL-2.0",

@@ -22,3 +22,8 @@ body.darkmode {
 .darkmode .headerbar h1, .darkmode .headerbar p {
 	color: #000000;
 }
+
+/** Fix for Quick Reply Releaded extension */
+.darkmode .qr_fixed_form {
+	position: sticky;
+}

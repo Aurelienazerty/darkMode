@@ -14,3 +14,8 @@ body.darkmode {
 .darkmode .headerbar {
 	background-image: none;
 }
+
+/** Fix for Quick Reply Releaded extension */
+.darkmode .qr_fixed_form {
+	position: sticky;
+}
