@@ -8,7 +8,7 @@
  *
  */
 
-namespace Aurelienazerty\darkMode\event;
+namespace aurelienazerty\darkmode\event;
 
 /**
  * Event listener
@@ -21,20 +21,24 @@ class listener implements EventSubscriberInterface
 	protected $template;
 	/** @var \phpbb\user $user */
 	protected $user;
+	/** @var \phpbb\request\request */
+	protected $request;
 
 
 	/**
 	 * Constructor
 	 *
 	 * @param \phpbb\template\template	$template Template object
-	 * @param \phpbb\user			$user User object
-	 * @return \Aurelienazerty\darkMode\event\listener
+	 * @param \phpbb\user								$user User object
+	 * @param \phpbb\request\request		$request
+	 * @return \aurelienazerty\darkmode\event\listener
 	 * @access public
 	 */
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\request\request $request)
 	{
 		$this->template = $template;
 		$this->user = $user;
+		$this->request = $request;
 	}
 
 	static public function getSubscribedEvents()
@@ -47,7 +51,7 @@ class listener implements EventSubscriberInterface
 	
 	public function do_dark($event)
 	{
-		$idDark = request_var('darkmode','',false,true);
+		$idDark = $this->request->variable('darkmode', false, true, \phpbb\request\request_interface::COOKIE);
 		if ($idDark)
 		{
 			$styleDoLight = "";
@@ -65,7 +69,7 @@ class listener implements EventSubscriberInterface
 		$this->template->append_var('STYLE_DO_DARK', $styleDoDark);
 		$this->template->append_var('STYLE_DO_LIGHT', $styleDoLight);
     
-		$this->user->add_lang_ext('Aurelienazerty/darkMode', 'dark_mode');
+		$this->user->add_lang_ext('aurelienazerty/darkmode', 'dark_mode');
 		$this->template->assign_var('DO_DARK_MESSAGE'	, $this->user->lang['DO_DARK_MODE']);
 		$this->template->assign_var('DO_LIGHT_MESSAGE'	, $this->user->lang['DO_LIGHT_MODE']);
 	}
