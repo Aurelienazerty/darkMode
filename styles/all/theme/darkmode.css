@@ -1,5 +1,6 @@
 body.darkmode {
   filter: invert(1) hue-rotate(.5turn);
+  padding: 15px;
 }
 
 .darkmode img, .darkmode iframe, .darkmode video, .darkmode .adsbygoogle {
