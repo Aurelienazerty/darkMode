@@ -1,4 +1,6 @@
 {% INCLUDECSS '@aurelienazerty_darkmode/darkmode.css' %}
 <script>
 	var cookie_darkmode_name = '{{ S_COOKIE_DARKMODE_NAME | escape('js') }}';
+
+	document.documentElement.classList.add('{{ S_DARKMODE_ROOT_CLASS }}')
 </script>
