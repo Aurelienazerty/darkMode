@@ -1,22 +1,16 @@
-body.darkmode {
-  filter: invert(1) hue-rotate(.5turn);
-  padding: 15px;
-}
-
-.darkmode img, .darkmode iframe, .darkmode video, .darkmode .adsbygoogle {
+:root.darkmode {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-.darkmode img:not(:hover) {
+:root.darkmode :is(img, iframe, video, .adsbygoogle) {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+:root.darkmode img:not(:hover) {
   opacity: .7;
   transition: opacity .25s ease-in-out;
 }
 
-.darkmode .headerbar {
+:root.darkmode .headerbar {
 	background-image: none;
-}
-
-/** Fix for Quick Reply Releaded extension */
-.darkmode .qr_fixed_form {
-	position: sticky;
 }

@@ -52,11 +52,11 @@ class listener implements EventSubscriberInterface
 			'core.adm_page_header'		=> 'do_dark',
 		);
 	}
-	
+
 	public function do_dark($event)
 	{
 		$cookie_darkmode_name = $this->config['cookie_name'] . '_darkmode';
-		
+
 		$dark_case = $this->request->variable($cookie_darkmode_name, false, false, \phpbb\request\request_interface::COOKIE);
 		if ($dark_case)
 		{
@@ -70,11 +70,11 @@ class listener implements EventSubscriberInterface
 			$style_do_dark = "";
 			$class = "lightmode";
 		}
-    
+
 		$this->user->add_lang_ext('aurelienazerty/darkmode', 'dark_mode');
-		
+
 		$this->template->assign_vars(array(
-			'BODY_CLASS'							=> 	$class,
+			'S_DARKMODE_ROOT_CLASS'				=> 	$class,
 			'STYLE_DO_DARK'						=> 	$style_do_dark,
 			'STYLE_DO_LIGHT'					=> 	$style_do_light,
 			'DO_DARK_MESSAGE'					=> 	$this->user->lang['DO_DARK_MODE'],
