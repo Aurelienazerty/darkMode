@@ -6,13 +6,13 @@ function darkmode(doDark) {
 		$("#callLight").show();
 		var date = new Date();
 		date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
-		document.cookie = cookie_darkmode_name + "=true;expires=" + date.toGMTString() + ";path=/";
+		document.cookie = cookie_darkmode_name + "=true;expires=" + date.toGMTString() + ";path=/; Secure; SameSite=Lax";
 	} else {
 		$("html").addClass("lightmode");
 		$("html").removeClass("darkmode");
 		$("#callDark").show();
 		$("#callLight").hide();
 		var date = new Date();
-		document.cookie = cookie_darkmode_name + "=false;expires=" + date.toGMTString() + ";path=/";
+		document.cookie = cookie_darkmode_name + "=false;expires=" + date.toGMTString() + ";path=/; Secure; SameSite=Lax";
 	}
 }
