@@ -1,4 +1,17 @@
-/** Les couleurs sont inversées
+body.darkmode {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+.darkmode img, .darkmode iframe, .darkmode video, .darkmode .adsbygoogle {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+.darkmode img:not(:hover) {
+  opacity: .7;
+  transition: opacity .25s ease-in-out;
+}
+
+/** Les couleurs sont inversées 
 		http://www.mattlag.com/scripting/hexcolorinverter.php
 */
 .darkmode .headerbar {
@@ -8,4 +21,9 @@
 
 .darkmode .headerbar h1, .darkmode .headerbar p {
 	color: #000000;
+}
+
+/** Fix for Quick Reply Releaded extension */
+.darkmode .qr_fixed_form {
+	position: sticky;
 }
